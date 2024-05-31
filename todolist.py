@@ -1,3 +1,5 @@
+"Simple to-do-list that uses classes "
+
 import uuid
 
 
