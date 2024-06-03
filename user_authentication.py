@@ -1,26 +1,24 @@
-
-### `user_authentication.py`
+# user_authentication.py
 
 """
 This project is part of my Python learning journey and features a simple user authentication 
-system. It includes user registration and login functionalities, with password hashing for security using bcrypt.
-The program ensures unique usernames and provides clear user prompts. This project showcases file handling,
- data persistence, and input validation skills. Sharing it on GitHub highlights my progress in applying core programming concepts.
+system. It includes user registration and login functionalities. The program ensures unique usernames 
+and provides clear user prompts. This project showcases file handling, data persistence, and input validation skills. 
+Sharing it on GitHub highlights my progress in applying core programming concepts.
 """
-# pip install json bcrypt 
+# pip install json
 import os
 import time
 import json
-import bcrypt
 
 # Print slow text 
-def print_slow(text: str, delay=0.03):
+def print_slow(text: str, delay=0.03)-> None:
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
 
 # Save user data
-def save_user_data(name: str, user_info: dict):
+def save_user_data(name: str, user_info: dict)-> None:
     existing_user_data = load_user_data()
     existing_user_data[name] = user_info
 
@@ -28,14 +26,14 @@ def save_user_data(name: str, user_info: dict):
         json.dump(existing_user_data, f, indent=4)
 
 # Load user data
-def load_user_data():
+def load_user_data()-> dict:
     if os.path.exists('user_info.json'):
         with open('user_info.json', 'r') as f:
             return json.load(f)
     return {}
 
 # Check if name exists
-def name_exists(name: str):
+def name_exists(name: str)->bool:
     user_data = load_user_data()
     return name in user_data
 
@@ -52,28 +50,32 @@ def register_user():
         while confirm_password != password:
             confirm_password = input("Passwords do not match. Please confirm your password: ").strip()
         
-        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-        
         user_data = {
             "Username": username,
             "Email": email,
-            "Password": hashed_password
+            "Password": password  # Store as plain text
         }
         save_user_data(name, user_data)
         print("Your account has been created successfully!")
         break
 
 def login():
+    user_data = load_user_data()
     name = input("Enter your name: ").strip()
     if not name_exists(name):
         print("Name does not exist. Please register first.")
         return
-
+    user_name = input("Enter your Username: ")
+    stored_username = user_data[name]["Username"]
+    if user_name != stored_username :
+        print("username is not correct for name you entered !")
+        return
+    
     password = input("Enter your password: ").strip()
-    user_data = load_user_data()
 
     stored_password = user_data[name]["Password"]
-    if bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8')):
+    
+    if password == stored_password:
         print("Login successful!")
     else:
         print("Incorrect password.")
