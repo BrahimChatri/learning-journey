@@ -10,7 +10,7 @@ I created this repository to document my learning process and share the various 
 
 You'll find:
 
-- Simple scripts and programs in pythomn
+- Simple scripts and programs 
 - Learning exercises and examples
 - Notes and comments on what I've learned
 
