@@ -19,7 +19,8 @@ Feel free to browse through the files and follow along with my progress.
 ## Contact
 
 **If you have any suggestions or feedback, feel free to reach out! :**
-
+- [brahim.chatri.dev@gmail.com](mailto:tanalt030@gmail.com)
+  <br></br>
 <a href="https://twitter.com/chatri_brahim" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="chatri_brahim" height="30" width="40" /></a>
 <a href="https://www.linkedin.com/in/brahim-chatri-23a397280/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="brahim-chatri-23a397280" height="30" width="40" /></a>
 <a href="https://instagram.com/brahim_chatri" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="brahim_chatri" height="30" width="40" /></a>
