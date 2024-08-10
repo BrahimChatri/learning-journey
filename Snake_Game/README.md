@@ -6,9 +6,8 @@ This is a classic Snake game developed using Pygame. It is designed as a practic
 
 The Snake game involves controlling a snake that moves around the screen, eating food to grow longer. The goal is to achieve the highest score possible while avoiding collisions with the walls and the snake’s own body.
 
-## Attribution
 
-This code is based on the tutorial from this [YouTube video](https://youtu.be/1zVlRXd8f7g?si=pmqDk_DFtBRqgej2).
+### This code is based on the tutorial from this [YouTube video](https://youtu.be/1zVlRXd8f7g?si=pmqDk_DFtBRqgej2).
 
 ## How It Works
 
