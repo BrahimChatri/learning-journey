@@ -2,7 +2,7 @@ import json
 import os
 
 class Contact:
-    def __init__(self, name: str, mobile_number: int | None = None, home_number: int | None = None, email: str | None = None, address: str | None = None) -> None:
+    def __init__(self, name: str, mobile_number: str | None = None, home_number: str | None = None, email: str | None = None, address: str | None = None) -> None:
         self.name = name
         self.mobile = mobile_number
         self.home = home_number
@@ -46,20 +46,29 @@ class ContactManager:
 class Data:
     @staticmethod
     def save_data(file_path: str, data: dict) -> None:
-        with open(file_path, "w") as file:
-            json.dump(data, file, indent=4)
+        try:
+            with open(file_path, "w") as file:
+                json.dump(data, file, indent=4)
+        except IOError as e:
+            print(f"Error saving data: {e}")
 
     @staticmethod
     def load_data(file_path: str) -> dict:
         if os.path.exists(file_path):
-            with open(file_path) as file:
-                return json.load(file)
+            try:
+                with open(file_path) as file:
+                    return json.load(file)
+            except (IOError, json.JSONDecodeError) as e:
+                print(f"Error loading data: {e}")
         return {}
     
     @staticmethod
     def delete_file(file_path: str) -> None:
         if os.path.exists(file_path):
-            os.remove(file_path)
+            try:
+                os.remove(file_path)
+            except IOError as e:
+                print(f"Error deleting file: {e}")
 
 def main():
     contact_manager = ContactManager()
@@ -80,28 +89,28 @@ def main():
         choice = input("Enter choice: ")
         
         if choice.strip() == "1":
-            name = input("Enter name: ")
-            mobile = input("Enter mobile number: ")
-            home = input("Enter home number: ")
-            email = input("Enter email: ")
-            address = input("Enter address: ")
+            name = input("Enter name: ").strip()
+            mobile = input("Enter mobile number: ").strip()
+            home = input("Enter home number: ").strip()
+            email = input("Enter email: ").strip()
+            address = input("Enter address: ").strip()
             contact = Contact(name, mobile or None, home or None, email or None, address or None)
             contact_manager.add_contact(contact)
             print("Contact added.")
         
         elif choice.strip() == "2":
-            name = input("Enter name of contact to remove: ")
+            name = input("Enter name of contact to remove: ").strip()
             contact_manager.remove_contact(name)
             print("Contact removed.")
         
         elif choice.strip() == "3":
-            name = input("Enter name of contact to update: ")
+            name = input("Enter name of contact to update: ").strip()
             contact = contact_manager.get_contact(name)
             if contact:
-                new_mobile = input(f"Enter new mobile number (current: {contact.mobile}): ")
-                new_home = input(f"Enter new home number (current: {contact.home}): ")
-                new_email = input(f"Enter new email (current: {contact.email}): ")
-                new_address = input(f"Enter new address (current: {contact.address}): ")
+                new_mobile = input(f"Enter new mobile number (current: {contact.mobile}): ").strip()
+                new_home = input(f"Enter new home number (current: {contact.home}): ").strip()
+                new_email = input(f"Enter new email (current: {contact.email}): ").strip()
+                new_address = input(f"Enter new address (current: {contact.address}): ").strip()
                 updated_contact = Contact(name, new_mobile or contact.mobile, new_home or contact.home, new_email or contact.email, new_address or contact.address)
                 contact_manager.update_contact(name, updated_contact)
                 print("Contact updated.")
