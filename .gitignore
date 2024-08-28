@@ -1,5 +1,6 @@
 .venv
 *log
+contacts.json
 __pypackages__/
 # Distribution / packaging
 .Python
