@@ -1,0 +1,22 @@
+.venv
+*log
+contacts.json
+__pypackages__/
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
