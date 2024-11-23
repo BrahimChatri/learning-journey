@@ -13,6 +13,7 @@ You'll find:
 - Simple scripts and programs 
 - Learning exercises and examples
 - Notes and comments on what I've learned
+- Cheat sheets of what I've learned 
 
 Feel free to browse through the files and follow along with my progress.
 
@@ -23,5 +24,8 @@ Feel free to browse through the files and follow along with my progress.
 <a href="https://twitter.com/chatri_brahim" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="chatri_brahim" height="30" width="40" /></a>
 <a href="https://www.linkedin.com/in/brahim-chatri-23a397280/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="brahim-chatri-23a397280" height="30" width="40" /></a>
 <a href="https://instagram.com/brahim_chatri" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="brahim_chatri" height="30" width="40" /></a>
+<a href="mailto:brahim.chatri.dev@gmail.com" target="_blank">
+    <img align="center" src="https://skillicons.dev/icons?i=gmail" alt="Gmail" height="50" width="48" />
+  </a>
 
 Happy coding!
